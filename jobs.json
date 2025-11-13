@@ -1,5 +1,5 @@
 [ {
-  "id" : "1a34db35-a931-479c-958f-04e5977be449",
+  "id" : "3ff8d0bf-47b8-4123-9e50-0ef6d4ed92fd",
   "name" : "Run this Job",
   "intervalMillis" : 3000,
   "task" : { },
@@ -10,7 +10,7 @@
   "dependencyIds" : [ "WAITING", "TRIG" ],
   "priority" : 0
 }, {
-  "id" : "af15cc6f-00d4-476d-a247-115c8bbe252f",
+  "id" : "df23856e-9472-485b-9d15-aebd142e04d3",
   "name" : "Random Number",
   "intervalMillis" : 5000,
   "task" : { },
@@ -21,7 +21,7 @@
   "dependencyIds" : [ "WAITING", "TRIG" ],
   "priority" : 0
 }, {
-  "id" : "2a5a8137-b1c7-4420-bf41-2a80daa3c391",
+  "id" : "c902fd75-45dc-4207-a3a3-cf40d86f3b3f",
   "name" : "Blah",
   "intervalMillis" : 3000,
   "task" : { },

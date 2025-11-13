@@ -31,10 +31,13 @@ public class Main {
 
         Runtime.getRuntime().addShutdownHook(new Thread(scheduler::stop));
 
-        WebDashboard dashboard = new WebDashboard(scheduler);
-        dashboard.start(8080);
+        int port = 8080;
+        String portEnv = System.getenv("PORT");
+        if (portEnv != null) port = Integer.parseInt(portEnv);
+//        WebDashboard dashboard = new WebDashboard(scheduler);
+//        dashboard.start(8080);
 
         ApiServer apiServer = new ApiServer(scheduler);
-        apiServer.start(8080);
+        apiServer.start(port);
     }
 }
