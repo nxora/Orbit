@@ -107,5 +107,9 @@ public class JobScheduler {
         recStack.put(job.getId(), false);
         return false;
     }
+    public List<Job> getJobs() {
+        return List.copyOf(jobs); // return unmodifiable copy
+    }
+
 
 }

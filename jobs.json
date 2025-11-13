@@ -1,5 +1,5 @@
 [ {
-  "id" : "7ac16ec4-4cd4-4218-9ec9-dd2a8087494b",
+  "id" : "533f2526-38e6-44c8-af74-1527415f38c8",
   "name" : "Run this Job",
   "intervalMillis" : 3000,
   "task" : { },
@@ -7,10 +7,10 @@
   "status" : "WAITING",
   "retryCount" : 0,
   "maxRetries" : 3,
-  "dependencyIds" : [ "WAITING" ],
+  "dependencyIds" : [ "WAITING", "PULLING" ],
   "priority" : 0
 }, {
-  "id" : "f49d41ba-d6d4-4f9b-b9db-0ad0cd8a725c",
+  "id" : "43542aef-1b08-4e54-9ba4-34c8a6b5f5a7",
   "name" : "Random Number",
   "intervalMillis" : 5000,
   "task" : { },
@@ -18,6 +18,17 @@
   "status" : "WAITING",
   "retryCount" : 0,
   "maxRetries" : 3,
-  "dependencyIds" : [ "WAITING" ],
+  "dependencyIds" : [ "WAITING", "PULLING" ],
+  "priority" : 0
+}, {
+  "id" : "70065118-7b20-41f6-aa64-77dc4840a890",
+  "name" : "Blah",
+  "intervalMillis" : 3000,
+  "task" : { },
+  "lastRunTime" : null,
+  "status" : "WAITING",
+  "retryCount" : 0,
+  "maxRetries" : 3,
+  "dependencyIds" : [ "WAITING", "PULLING" ],
   "priority" : 0
 } ]
