@@ -12,7 +12,7 @@ public class JobHistoryLogger {
                 "Job: " + job.getName() +
                 " | Status: " + job.getStatus() +
                 " | Message: " + message +
-                " | ???: " + job.getDependencyIds() +
+                " | Dependencies: " + job.getDependencyIds() +
                 " | Priority: " + job.getPriority() +
                 System.lineSeparator();
 

@@ -1,19 +1,23 @@
 [ {
-  "id" : "a2da502c-1b77-4e40-896f-2d9d9350a0b9",
+  "id" : "7ac16ec4-4cd4-4218-9ec9-dd2a8087494b",
   "name" : "Run this Job",
   "intervalMillis" : 3000,
   "task" : { },
-  "lastRunTime" : "2025-11-13T18:55:41.5355811",
-  "status" : "SUCCESS",
+  "lastRunTime" : null,
+  "status" : "WAITING",
   "retryCount" : 0,
-  "maxRetries" : 3
+  "maxRetries" : 3,
+  "dependencyIds" : [ "WAITING" ],
+  "priority" : 0
 }, {
-  "id" : "c5883bb2-1158-4902-b8da-d313959c8d9c",
+  "id" : "f49d41ba-d6d4-4f9b-b9db-0ad0cd8a725c",
   "name" : "Random Number",
   "intervalMillis" : 5000,
   "task" : { },
   "lastRunTime" : null,
   "status" : "WAITING",
   "retryCount" : 0,
-  "maxRetries" : 3
+  "maxRetries" : 3,
+  "dependencyIds" : [ "WAITING" ],
+  "priority" : 0
 } ]

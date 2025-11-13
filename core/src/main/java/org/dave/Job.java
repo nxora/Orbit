@@ -60,7 +60,7 @@ public class Job {
     }
 
     public boolean dependenciesSatisfied (Map<String, Job> allJobs){
-        if (dependencyIds == null || dependencyIds.isEmpty())return false;
+        if (dependencyIds == null || dependencyIds.isEmpty()) return true;
 
         for (String depId : dependencyIds){
             Job depjob = allJobs.get(depId);
