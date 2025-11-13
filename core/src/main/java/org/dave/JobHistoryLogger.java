@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 public class JobHistoryLogger {
     private static final String LOG_FILE = "job_history.log";
 
-    public static synchronized void log(Job job, String message) { explain this synchronized keyword
+    public static synchronized void log(Job job, String message) {
         String logEntry = "[" + LocalDateTime.now() + "] " +
                 "Job: " + job.getName() +
                 " | Status: " + job.getStatus() +
