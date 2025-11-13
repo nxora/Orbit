@@ -42,7 +42,7 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>org.dave.core.Main</mainClass> <!-- ⚠️ CHANGE THIS TO YOUR ACTUAL MAIN CLASS -->
+                            <mainClass>org.dave.Main</mainClass> <!-- ⚠️ CHANGE THIS TO YOUR ACTUAL MAIN CLASS -->
                         </manifest>
                     </archive>
                 </configuration>
