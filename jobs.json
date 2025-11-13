@@ -1,0 +1,34 @@
+[ {
+  "id" : "1a34db35-a931-479c-958f-04e5977be449",
+  "name" : "Run this Job",
+  "intervalMillis" : 3000,
+  "task" : { },
+  "lastRunTime" : null,
+  "status" : "WAITING",
+  "retryCount" : 0,
+  "maxRetries" : 3,
+  "dependencyIds" : [ "WAITING", "TRIG" ],
+  "priority" : 0
+}, {
+  "id" : "af15cc6f-00d4-476d-a247-115c8bbe252f",
+  "name" : "Random Number",
+  "intervalMillis" : 5000,
+  "task" : { },
+  "lastRunTime" : null,
+  "status" : "WAITING",
+  "retryCount" : 0,
+  "maxRetries" : 3,
+  "dependencyIds" : [ "WAITING", "TRIG" ],
+  "priority" : 0
+}, {
+  "id" : "2a5a8137-b1c7-4420-bf41-2a80daa3c391",
+  "name" : "Blah",
+  "intervalMillis" : 3000,
+  "task" : { },
+  "lastRunTime" : null,
+  "status" : "WAITING",
+  "retryCount" : 0,
+  "maxRetries" : 3,
+  "dependencyIds" : [ "WAITING", "TRIG" ],
+  "priority" : 0
+} ]
