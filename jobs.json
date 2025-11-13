@@ -1,0 +1,19 @@
+[ {
+  "id" : "a2da502c-1b77-4e40-896f-2d9d9350a0b9",
+  "name" : "Run this Job",
+  "intervalMillis" : 3000,
+  "task" : { },
+  "lastRunTime" : "2025-11-13T18:55:41.5355811",
+  "status" : "SUCCESS",
+  "retryCount" : 0,
+  "maxRetries" : 3
+}, {
+  "id" : "c5883bb2-1158-4902-b8da-d313959c8d9c",
+  "name" : "Random Number",
+  "intervalMillis" : 5000,
+  "task" : { },
+  "lastRunTime" : null,
+  "status" : "WAITING",
+  "retryCount" : 0,
+  "maxRetries" : 3
+} ]

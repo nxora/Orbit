@@ -7,10 +7,12 @@ import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
-public class JobManager {explainb this class line by line
+public class JobManager {
 
         private static final String FILE_PATH = "jobs.json";
-        private static final ObjectMapper mapper = new ObjectMapper();
+    private static final ObjectMapper mapper = new ObjectMapper()
+            .registerModule(new com.fasterxml.jackson.datatype.jsr310.JavaTimeModule())
+            .disable(com.fasterxml.jackson.databind.SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
 
         public static synchronized void saveJobs(List<Job> jobs) {
             try {
@@ -33,4 +35,4 @@ public class JobManager {explainb this class line by line
         }
     }
 
-}
+

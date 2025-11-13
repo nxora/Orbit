@@ -22,12 +22,12 @@ public class JobExecutor {
                 job.setLastRunTime(LocalDateTime.now());
                 job.setStatus(JobStatus.SUCCESS);
                 System.out.println("Orbit Says Job " + job.getName() + " finished running at " + job.getLastRunTime());
-                JobHistoryLogger.log(job,job.getStatus());
+                JobHistoryLogger.log(job,"SUCCESS");
 
             } catch (Exception e) {
                 job.incrementRetryCount();
                 job.setStatus(JobStatus.FAILED);
-                JobHistoryLogger.log(job,job.getStatus() + e.getMessage());
+                JobHistoryLogger.log(job,"FAILED" + e.getMessage());
 
                 if (job.getRetryCount() < job.getMaxRetries()) {
                     System.err.println("Orbit says Job " + job.getName() + " failed. Retrying (" +
