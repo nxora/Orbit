@@ -7,6 +7,7 @@ public class JobScheduler {
     private final List<Job> jobs = new ArrayList<>();
     private final JobExecutor executor = new JobExecutor();
     private boolean running = false;
+
     public void registerJob(Job job){
         jobs.add(job);
         System.out.println("Orbit has registered Job: " + job.getName());
@@ -17,13 +18,18 @@ public class JobScheduler {
         running = true;
         System.out.println("Orbit is running ");
 
-        new Thread(() -> {
+        Thread loopThread = new Thread(() -> {
             while (running) {
                 long now = System.currentTimeMillis();
 
                 for (Job job : jobs){
+                    if (!running) break;
                     if (job.getLastRunTime() == null || now - job.getLastRunTime().atZone(java.time.ZoneId.systemDefault()).toInstant().toEpochMilli() >= job.getIntervalMillis()) {
-                        executor.execute(job);
+                        try {
+                            executor.execute(job);
+                        } catch (Exception e) {
+                            System.err.println("Orbit couldn't execute  job " + job.getName() + ": " + e.getMessage());
+                        }
                     }
                 }
 
@@ -31,14 +37,23 @@ public class JobScheduler {
                     Thread.sleep(1000);
                 } catch (InterruptedException e) {
                     Thread.currentThread().interrupt();
-                    throw new RuntimeException(e);
                 }
             }
-        }).start();
+            System.out.println("[Orbit] Scheduler loop exited.");
+        });
+        loopThread.setDaemon(true);
+        loopThread.start();
     }
 
     public void stop() {
+        System.out.println("Orbit Stopping scheduler...");
         running = false;
-        System.out.println("Orbit Stopped");
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+         }
+        executor.shutDown();
+        System.out.println("Orbit says Scheduler stopped gracefully.");
     }
 }
