@@ -11,6 +11,7 @@ public class JobScheduler {
     public void registerJob(Job job){
         jobs.add(job);
         System.out.println("Orbit has registered Job: " + job.getName());
+        JobManager.saveJobs(jobs);
     }
 
     public void start() {
@@ -54,6 +55,7 @@ public class JobScheduler {
             Thread.currentThread().interrupt();
          }
         executor.shutDown();
+        JobManager.saveJobs(jobs);
         System.out.println("Orbit says Scheduler stopped gracefully.");
     }
 }
