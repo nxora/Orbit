@@ -1,15 +1,19 @@
 package org.dave;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class JobScheduler {
     private final List<Job> jobs = new ArrayList<>();
     private final JobExecutor executor = new JobExecutor();
     private boolean running = false;
+    private Map<String, Job > jobMap = new HashMap<>();
 
     public void registerJob(Job job){
         jobs.add(job);
+        jobMap.put(job.getId(), job);
         System.out.println("Orbit has registered Job: " + job.getName());
         JobManager.saveJobs(jobs);
     }
@@ -25,7 +29,8 @@ public class JobScheduler {
 
                 for (Job job : jobs){
                     if (!running) break;
-                    if (job.getLastRunTime() == null || now - job.getLastRunTime().atZone(java.time.ZoneId.systemDefault()).toInstant().toEpochMilli() >= job.getIntervalMillis()) {
+                    boolean ready = job.dependenciesSatisfied(jobMap) &&  job.getLastRunTime() == null || now - job.getLastRunTime().atZone(java.time.ZoneId.systemDefault()).toInstant().toEpochMilli() >= job.getIntervalMillis();
+                    if (ready) {
                         try {
                             executor.execute(job);
                         } catch (Exception e) {
