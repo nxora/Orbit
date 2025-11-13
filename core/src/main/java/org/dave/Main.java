@@ -7,7 +7,7 @@ public class Main {
         JobScheduler scheduler = new JobScheduler();
 
         Job FirstJob = new Job("Run this Job", 3000, () -> {
-            System.out.println("Running this Job" + System.currentTimeMillis());
+            System.out.println("Running this Job " + System.currentTimeMillis());
         });
 
         Job SecondJob = new Job("Random Number", 5000, () -> {
@@ -18,6 +18,7 @@ public class Main {
         scheduler.registerJob(FirstJob);
         scheduler.registerJob(SecondJob);
         scheduler.start();
-//        scheduler.stop();
+
+        Runtime.getRuntime().addShutdownHook(new Thread(scheduler::stop));
     }
 }
