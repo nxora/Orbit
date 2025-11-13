@@ -36,7 +36,7 @@ public class WebDashboard {
             response.append("<meta http-equiv=\"refresh\" content=\"2\">"); // auto-refresh every 2s
             response.append("</head><body>");
             response.append("<h1>Orbit Job Scheduler Dashboard</h1>");
-            response.append("<table border='1'><tr><th>Job Name</th><th>Status</th><th>Last Run</th><th>Retries</th><th>Dependencies</th></tr>");
+            response.append("<table border='1' style='background-color: red;'><tr><th>Job Name</th><th>Status</th><th>Last Run</th><th>Retries</th><th>Dependencies</th></tr>");
             for (Job job : jobs) {
                 response.append("<tr>")
                         .append("<td>").append(job.getName()).append("</td>")

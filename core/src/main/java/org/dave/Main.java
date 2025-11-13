@@ -33,5 +33,8 @@ public class Main {
 
         WebDashboard dashboard = new WebDashboard(scheduler);
         dashboard.start(8080);
+
+        ApiServer apiServer = new ApiServer(scheduler);
+        apiServer.start(8080);
     }
 }

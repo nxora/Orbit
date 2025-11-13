@@ -110,6 +110,18 @@ public class JobScheduler {
     public List<Job> getJobs() {
         return List.copyOf(jobs); // return unmodifiable copy
     }
+    public boolean runJobNow(String jobId) {
+        Job job = jobMap.get(jobId);
+        if (job != null) {
+            try {
+                executor.execute(job);
+                return true;
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return false;
+    }
 
 
 }
