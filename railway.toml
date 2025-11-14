@@ -1,6 +1,3 @@
-[build]
-builder = "default"
-
 [build.config]
 buildCommand = "mvn clean package -f core/pom.xml"
 
