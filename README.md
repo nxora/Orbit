@@ -285,11 +285,11 @@ It’s perfect as:
 Feel free to fork, improve, or extend Orbit.
 Future ideas:
 
-* DAG dependencies
-* Retry policies
+* DAG dependencies ✅
+* Retry policies ✅
 * Distributed clusters
-* Priority queues
-* WebSocket live updates
+* Priority queues ✅
+* WebSocket live updates ✅
 
 ---
 
