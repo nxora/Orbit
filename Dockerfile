@@ -1,5 +1,5 @@
 # Use an official OpenJDK runtime as a parent image
-FROM openjdk:17-slim-bullseye
+FROM eclipse-temurin:17-jre-slim
 
 # Set the working directory
 WORKDIR /app
