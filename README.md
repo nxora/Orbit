@@ -293,6 +293,9 @@ Future ideas:
 
 ---
 
+
+- Author: [Daveora](https://github.com/davex-ai)
+
 🎉 Final Notes
 
 Orbit is more than a scheduler — it’s your own mini automation platform, built from scratch in Java. It’s transparent, hackable, and powerful.
